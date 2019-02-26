@@ -58,6 +58,7 @@ func ReadInConfig() {
 	if _, err := os.Stat(os.Getenv("APT_TRANSPORT_I2PHTTP_CONF")); os.IsNotExist(err) {
 		os.Setenv("I2P_HTTP_PROXY", "http://127.0.0.1:4444")
 		os.Setenv("HTTP_PROXY", "http://127.0.0.1:4444")
+        os.Setenv("http_proxy", "http://127.0.0.1:4444")
 	} else if err != nil {
 		log.Fatal(err)
 	} else {
@@ -80,12 +81,15 @@ func ReadInConfig() {
 		}
 		os.Setenv("I2P_HTTP_PROXY", "http://"+host+":"+port)
 		os.Setenv("HTTP_PROXY", "http://"+host+":"+port)
+        os.Setenv("http_proxy", "http://"+host+":"+port)
 	}
 	if os.Getenv("I2P_HTTP_PROXY") == "" {
 		os.Setenv("I2P_HTTP_PROXY", "http://127.0.0.1:4444")
 		os.Setenv("HTTP_PROXY", "http://127.0.0.1:4444")
+        os.Setenv("http_proxy", "http://127.0.0.1:4444")
 	} else {
 		os.Setenv("HTTP_PROXY", os.Getenv("I2P_HTTP_PROXY"))
+        os.Setenv("http_proxy", os.Getenv("I2P_HTTP_PROXY"))
 	}
 }
 
