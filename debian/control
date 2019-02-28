@@ -8,8 +8,8 @@ Build-Depends: debhelper (>= 11),
                golang-any
 Standards-Version: 4.2.1
 Homepage: https://github.com/eyedeekay/apt-transport-i2phttp
-Vcs-Browser: https://salsa.debian.org/go-team/packages/apt-transport-i2phttp
-Vcs-Git: https://salsa.debian.org/go-team/packages/apt-transport-i2phttp.git
+Vcs-Browser: https://github.com/eyedeekay/apt-transport-i2phttp
+Vcs-Git: https://github.com/eyedeekay/apt-transport-i2phttp.git
 XS-Go-Import-Path: github.com/eyedeekay/apt-transport-i2phttp
 Testsuite: autopkgtest-pkg-go
 
