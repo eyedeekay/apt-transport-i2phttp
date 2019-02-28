@@ -1,4 +1,4 @@
-apt-transport-i2phttp (0.0~git20190224.6dc102d-1) UNRELEASED; urgency=medium
+apt-transport-i2phttp (0.0~git20190224.6dc102d-1) proposed; urgency=medium
 
   [ idk ]
   * Initial release (Closes: TODO)
