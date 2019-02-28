@@ -1,5 +1,9 @@
 apt-transport-i2phttp (0.0~git20190224.6dc102d-1) UNRELEASED; urgency=medium
 
+  [ idk ]
   * Initial release (Closes: TODO)
 
- -- idk <hankhill19580@gmail.com>  Sat, 23 Feb 2019 21:21:35 -0500
+  [ idk ]
+  * set the http_proxy(lowercase) environment variable too
+
+ -- idk <hankhill19580@gmail.com>  Thu, 28 Feb 2019 15:45:39 -0500
