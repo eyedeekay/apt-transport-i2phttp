@@ -193,7 +193,7 @@ func fetch(c chan<- *Message, m *Message) {
 	// TODO: Fix bug with appending to existing files
 	// TODO: implement range requests if file already exists
 
-	realURI := strings.TrimPrefix(uri, "i2p://")
+	realURI := strings.Replace(uri, "i2p://", "http://", 1)
 
 	resp, err := http.Get(realURI)
 	if err != nil {
