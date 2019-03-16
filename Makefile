@@ -10,3 +10,6 @@ install: apt-transport-i2phttp
 
 clean:
 	go clean
+
+orig:
+	tar --exclude=.git --exclude=debian -czvf ../apt-transport-i2phttp_0.1.orig.tar.gz .
