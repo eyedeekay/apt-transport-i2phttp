@@ -2,6 +2,9 @@
 
 override_dh_auto_install:
 	dh_auto_install -- --no-source
+	mkdir -p debian/apt-transport-i2phttp/usr/lib/apt/methods/
+	ln -sf debian/apt-transport-i2phttp/usr/bin/apt-transport-i2phttp \
+		debian/apt-transport-i2phttp/usr/lib/apt/methods/i2p
 
 %:
 	dh $@ --buildsystem=golang --with=golang

@@ -5,7 +5,7 @@ apt-transport-i2phttp:
 		-tags netgo \
 		-ldflags '-w -extldflags "-static"'
 
-install: apt-transport-i2phttp
+install:
 	install -m755 apt-transport-i2phttp /usr/lib/apt/methods/i2p
 
 clean:
