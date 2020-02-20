@@ -3,7 +3,7 @@ apt-transport-i2phttp (0.2) bionic; urgency=medium
   [ idk ]
   * Update the packaging
 
- -- idk <hankhill19580@gmail.com>  Sat, 16 Mar 2019 14:04:22 -0500
+ -- idk <hankhill19580@gmail.com>  Sun, 08 Dec 2019 19:35:21 -0500
 
 apt-transport-i2phttp (0.1) bionic; urgency=medium
 
