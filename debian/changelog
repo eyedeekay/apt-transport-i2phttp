@@ -1,3 +1,10 @@
+apt-transport-i2phttp (0.3) bionic; urgency=medium
+
+  [ idk ]
+  * Downgrade minimum recommended debhelper to 10
+
+ -- idk <hankhill19580@gmail.com>  Sat, 16 Apr 2020 19:20:21 -0500
+
 apt-transport-i2phttp (0.2) bionic; urgency=medium
 
   [ idk ]

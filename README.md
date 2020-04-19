@@ -26,6 +26,37 @@ by default. You can just:
 to install ./apt-transport-i2phttp to /usr/lib/apt/methods/i2p, requiring no
 additional configuration.
 
+To build a proper deb of it:
+----------------------------
+
+Building a release is done with pbuilder to avoid building a release with
+packages not in the appropriate version of Debian or Ubuntu. Use 
+```pbuilder create``` to set up the chroot appropriate to your target
+distribution. Then, in the root of the repository directory, run the command
+```debuild -s``` to generate a .dsc file in the parent directory. Now that you
+have the ,dsc file, create a build directory using ```mkdir -p deb/targetdistro``` 
+and run ```pbuilder build --buildresult ./deb/stable``` to generate your actual
+deb packages. Of course, you'll have to adjust the commands to suit the target
+distribution. And you have to do it for every single distribution you want to
+build for.
+
+I have [this script stored at this gist](https://gist.github.com/eyedeekay/91927f31396dd50ae9d22051ded154ef)
+that I use to make my life easier. It should also be pretty easy to understand.
+From the repository directory, run the script like:
+
+        $pathtoscript/release.sh stable
+
+so to build for like a whole bunch of releases(With it installed as release-pdeb
+in /usr/local/bin):
+
+        release-pdeb stable
+        release-pdeb testing
+        release-pdeb unstable
+        release-pdeb bionic
+        release-pdeb eoan
+        release-pdeb focal
+
+
 To use it:
 ---------
 

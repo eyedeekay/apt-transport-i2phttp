@@ -3,9 +3,9 @@ Section: devel
 Priority: optional
 Maintainer: idk <hankhill19580@gmail.com>
 Uploaders: idk <hankhill19580@gmail.com>
-Build-Depends: debhelper (>= 11),
+Build-Depends: debhelper (>= 10),
                dh-golang,
-               golang-any
+               golang-go
 Standards-Version: 4.2.1
 Homepage: https://github.com/eyedeekay/apt-transport-i2phttp
 Vcs-Browser: https://github.com/eyedeekay/apt-transport-i2phttp
