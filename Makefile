@@ -24,11 +24,15 @@ orig:
 release: ubuntu debian
 
 debian:
-	release-pdeb stable
-	release-pdeb testing
-	release-pdeb unstable
+	./release.sh stable
+	./release.sh testing
+	./release.sh unstable
 
 ubuntu:
-	release-pdeb bionic
-	release-pdeb eoan
-	release-pdeb focal
+	./release.sh bionic
+	./release.sh eoan
+	./release.sh focal
+
+github-release: release
+	./release.sh upload
+
