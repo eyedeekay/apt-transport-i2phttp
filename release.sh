@@ -34,35 +34,36 @@ setup(){
 
 upload(){
     cd deb
+    gothub release -u $USERNAME -r $PKG -t $VERSION -n $dist-$name || exit 1
 	for bin in $(find . -name '*.deb'); do
         dist=$(dirname $bin)
         name=$(basename $bin)
-        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin \;
+        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin 
     done
 	for bin in $(find . -name '*.orig.tar.gz'); do
         dist=$(dirname $bin)
         name=$(basename $bin)
-        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin \;
+        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin 
     done
 	for bin in $(find . -name '*.tar.xz'); do
         dist=$(dirname $bin)
         name=$(basename $bin)
-        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin \;
+        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin 
     done
 	for bin in $(find . -name '*.dsc'); do
         dist=$(dirname $bin)
         name=$(basename $bin)
-        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin \;
+        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin 
     done
 	for bin in $(find . -name '*.changes'); do
         dist=$(dirname $bin)
         name=$(basename $bin)
-        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin \;
+        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin 
     done
 	for bin in $(find . -name '*.buildinfo'); do
         dist=$(dirname $bin)
         name=$(basename $bin)
-        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin \;
+        gothub upload -R -u $USERNAME -r $PKG -t $VERSION -n $dist-$name -f $bin 
     done
     cd ..
 }

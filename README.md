@@ -18,6 +18,32 @@ of systems.
 To install it:
 --------------
 
+If you're on Ubuntu and want to fetch it from the github release, you can run
+these 2 commands.
+
+		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.$(lsb_release -s -c)-apt-transport-i2phttp_0.4_amd64.deb
+		dpkg -i default.$(lsb_release -s -c)-apt-transport-i2phttp_0.4_amd64.deb
+
+If you're on Debian, you'll need to use this for stable:
+
+		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.stable-apt-transport-i2phttp_0.4_amd64.deb
+		dpkg -i default.stable-apt-transport-i2phttp_0.4_amd64.deb
+
+this for testing:
+
+		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.testing-apt-transport-i2phttp_0.4_amd64.deb
+		dpkg -i default.testing-apt-transport-i2phttp_0.4_amd64.deb
+
+and this for sid:
+
+		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.unstable-apt-transport-i2phttp_0.4_amd64.deb
+		dpkg -i default.unstable-apt-transport-i2phttp_0.4_amd64.deb
+
+Once you've done that, run these 2 commands:
+
+		http_proxy=http://127.0.0.1:4444 wget -O - 'http://apt.idk.i2p/key.asc' | sudo apt-key add - 
+		echo deb i2p://apt.idk.i2p/debian unstable main | sudo tee /etc/apt/sources.list.d/apt.idk.i2p.list
+
 As long as you have an i2p router installed the http proxy should be enabled
 by default. You can just:
 
@@ -44,6 +70,11 @@ use it, like my experimental packages repository, you would just use the reposit
 hostname instead, like this:
 
 		deb i2p://apt.idk.i2p/debian unstable main
+
+Of course, to install packages from this repository, you'll need to fetch the repo
+key.
+
+        http_proxy=http://127.0.0.1:4444 wget -O - 'http://apt.idk.i2p/key.asc' | sudo apt-key add - 
 
 To build a proper deb of it:
 ----------------------------
