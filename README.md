@@ -44,8 +44,12 @@ Once you've done that, run these 2 commands:
 		http_proxy=http://127.0.0.1:4444 wget -O - 'http://apt.idk.i2p/key.asc' | sudo apt-key add - 
 		echo deb i2p://apt.idk.i2p unstable main | sudo tee /etc/apt/sources.list.d/apt.idk.i2p.list
 
+That will allow you to obtain automatic updates from the in-network apt repository.
+
 As long as you have an i2p router installed the http proxy should be enabled
-by default. You can just:
+by default.
+
+If you want to build for a system I haven't made a binary for, you can just:
 
         make build && sudo make install
 
