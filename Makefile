@@ -21,14 +21,14 @@ clean:
 orig:
 	tar --exclude=.git --exclude=debian -czvf ../apt-transport-i2phttp_$(VERSION).orig.tar.gz .
 
-release: ubuntu debian
+release: ubuntus debians
 
-debian:
+debians:
 	./release.sh stable
 	./release.sh testing
 	./release.sh unstable
 
-ubuntu:
+ubuntus:
 	./release.sh bionic
 	./release.sh eoan
 	./release.sh focal

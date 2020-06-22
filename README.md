@@ -26,6 +26,25 @@ by default. You can just:
 to install ./apt-transport-i2phttp to /usr/lib/apt/methods/i2p, requiring no
 additional configuration.
 
+To use it:
+----------
+
+There aren't very many apt repositories inside of I2P yet, the 2 that I know
+about are both operated by me. One is an apt-cacher-ng proxy, which is effectively
+a means of fetching clearnet debian packages from with I2P. You can use it with an
+apt line something like this:
+
+		deb i2p://ul5nnihwk5v67iutqn6ac3fdy32acmc7socjjncwyshywmbz36ea.b32.i2p/deb.debian.org/debian stable main
+
+In this case, the caching proxy is the host where you fetch packages from, and
+the path is the desired Debian package repository.
+
+Alternatively, there may be actual package repositories inside of I2P you wish to
+use it, like my experimental packages repository, you would just use the repository
+hostname instead, like this:
+
+		deb i2p://apt.idk.i2p/debian unstable main
+
 To build a proper deb of it:
 ----------------------------
 
@@ -62,7 +81,7 @@ To use it:
 
 Adding this to your sources.list.d will configure apt to seek updates to
 ppa.launchpad.net/i2p-maintainers from a caching proxy at the b32 address:
-```h2knzawve56vtiimbdsl74bmbuw7xr65xhgrdjtjnbfxxw4hsqlq.b32.i2p```
+```ul5nnihwk5v67iutqn6ac3fdy32acmc7socjjncwyshywmbz36ea.b32.i2p```
 
-        deb i2p://h2knzawve56vtiimbdsl74bmbuw7xr65xhgrdjtjnbfxxw4hsqlq.b32.i2p/ppa.launchpad.net/i2p-maintainers/i2p/ubuntu bionic main
-        deb-src i2p://h2knzawve56vtiimbdsl74bmbuw7xr65xhgrdjtjnbfxxw4hsqlq.b32.i2p/ppa.launchpad.net/i2p-maintainers/i2p/ubuntu bionic main
+        deb i2p://ul5nnihwk5v67iutqn6ac3fdy32acmc7socjjncwyshywmbz36ea.b32.i2p/ppa.launchpad.net/i2p-maintainers/i2p/ubuntu bionic main
+        deb-src i2p://ul5nnihwk5v67iutqn6ac3fdy32acmc7socjjncwyshywmbz36ea.b32.i2p/ppa.launchpad.net/i2p-maintainers/i2p/ubuntu bionic main
