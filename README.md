@@ -59,7 +59,15 @@ deb packages. Of course, you'll have to adjust the commands to suit the target
 distribution. And you have to do it for every single distribution you want to
 build for.
 
-I have [this script stored at this gist](https://gist.github.com/eyedeekay/91927f31396dd50ae9d22051ded154ef)
+You *must* have this line specified in your ~/.pbuilderrc file:
+
+		PBUILDERSATISFYDEPENDSCMD=/usr/lib/pbuilder/pbuilder-satisfydepends-apt
+
+and, if you wish to build for both Debian *and* Ubuntu, you must not specify a
+mirror in your ~/.pbuilderrc or the mirror specified by the --mirror flag will
+not be honored.
+
+I have the release.sh script in the root of this repo
 that I use to make my life easier. It should also be pretty easy to understand.
 From the repository directory, run the script like:
 
@@ -76,12 +84,13 @@ in /usr/local/bin):
         release-pdeb focal
 
 
-To use it:
----------
+To Release it:
+--------------
 
-Adding this to your sources.list.d will configure apt to seek updates to
-ppa.launchpad.net/i2p-maintainers from a caching proxy at the b32 address:
-```ul5nnihwk5v67iutqn6ac3fdy32acmc7socjjncwyshywmbz36ea.b32.i2p```
+This software is released in 2 places, an out-of-network source and an in-network
+source. The out-of-network source is this github repository's release section.
+Other mirrors can be made available by others but this is the official one. If you
+want to release to your own github mirror, set the USERNAME environment variable
+and run the command "make upload."
 
-        deb i2p://ul5nnihwk5v67iutqn6ac3fdy32acmc7socjjncwyshywmbz36ea.b32.i2p/ppa.launchpad.net/i2p-maintainers/i2p/ubuntu bionic main
-        deb-src i2p://ul5nnihwk5v67iutqn6ac3fdy32acmc7socjjncwyshywmbz36ea.b32.i2p/ppa.launchpad.net/i2p-maintainers/i2p/ubuntu bionic main
+

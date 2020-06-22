@@ -1,4 +1,4 @@
-apt-transport-i2phttp (0.4) bionic; urgency=medium
+apt-transport-i2phttp (0.4) unreleased; urgency=medium
 
   [ idk ]
   * Fix some packaging stuff, update the readme, housekeeping stuff
