@@ -42,7 +42,7 @@ and this for sid:
 Once you've done that, run these 2 commands:
 
 		http_proxy=http://127.0.0.1:4444 wget -O - 'http://apt.idk.i2p/key.asc' | sudo apt-key add - 
-		echo deb i2p://apt.idk.i2p/debian unstable main | sudo tee /etc/apt/sources.list.d/apt.idk.i2p.list
+		echo deb i2p://apt.idk.i2p unstable main | sudo tee /etc/apt/sources.list.d/apt.idk.i2p.list
 
 As long as you have an i2p router installed the http proxy should be enabled
 by default. You can just:
@@ -69,7 +69,7 @@ Alternatively, there may be actual package repositories inside of I2P you wish t
 use it, like my experimental packages repository, you would just use the repository
 hostname instead, like this:
 
-		deb i2p://apt.idk.i2p/debian unstable main
+		deb i2p://apt.idk.i2p unstable main
 
 Of course, to install packages from this repository, you'll need to fetch the repo
 key.
