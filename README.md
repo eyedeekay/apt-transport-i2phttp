@@ -91,6 +91,6 @@ This software is released in 2 places, an out-of-network source and an in-networ
 source. The out-of-network source is this github repository's release section.
 Other mirrors can be made available by others but this is the official one. If you
 want to release to your own github mirror, set the USERNAME environment variable
-and run the command "make upload."
+and run the command ```make github-release```.
 
 
