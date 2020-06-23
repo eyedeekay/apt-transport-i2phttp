@@ -22,22 +22,22 @@ If you're on Ubuntu and want to fetch it from the github release, you can run
 these 2 commands.
 
 		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.$(lsb_release -s -c)-apt-transport-i2phttp_0.4_amd64.deb
-		dpkg -i default.$(lsb_release -s -c)-apt-transport-i2phttp_0.4_amd64.deb
+		sudo dpkg -i default.$(lsb_release -s -c)-apt-transport-i2phttp_0.4_amd64.deb
 
 If you're on Debian, you'll need to use this for stable:
 
 		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.stable-apt-transport-i2phttp_0.4_amd64.deb
-		dpkg -i default.stable-apt-transport-i2phttp_0.4_amd64.deb
+		sudo dpkg -i default.stable-apt-transport-i2phttp_0.4_amd64.deb
 
 this for testing:
 
 		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.testing-apt-transport-i2phttp_0.4_amd64.deb
-		dpkg -i default.testing-apt-transport-i2phttp_0.4_amd64.deb
+		sudo dpkg -i default.testing-apt-transport-i2phttp_0.4_amd64.deb
 
 and this for sid:
 
 		wget https://github.com/eyedeekay/apt-transport-i2phttp/releases/download/0.4/default.unstable-apt-transport-i2phttp_0.4_amd64.deb
-		dpkg -i default.unstable-apt-transport-i2phttp_0.4_amd64.deb
+		sudo dpkg -i default.unstable-apt-transport-i2phttp_0.4_amd64.deb
 
 Once you've done that, run these 2 commands:
 
@@ -45,6 +45,9 @@ Once you've done that, run these 2 commands:
 		echo deb i2p://apt.idk.i2p unstable main | sudo tee /etc/apt/sources.list.d/apt.idk.i2p.list
 
 That will allow you to obtain automatic updates from the in-network apt repository.
+Note that you will need to visit apt.idk.i2p in an I2P-enabled browser to add the
+hostname to your address book, otherwise you'll recieve ```ERROR 500: Domain Not Found```
+when fetching the keys.
 
 As long as you have an i2p router installed the http proxy should be enabled
 by default.

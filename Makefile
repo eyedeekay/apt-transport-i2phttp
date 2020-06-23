@@ -36,3 +36,6 @@ ubuntus:
 github-release: release
 	./release.sh upload
 
+copier:
+	echo '#! /usr/bin/env sh' > deb/copy.sh
+	echo 'for f in $$(ls); do scp $$f/*.deb user@192.168.99.106:~/DEBIAN_PKGS/$$f/main/; done' >> deb/copy.sh

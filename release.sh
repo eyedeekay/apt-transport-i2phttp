@@ -82,7 +82,7 @@ releasebuild() {
     debuild -S
     echo "making output directory ./deb/$1"
     mkdir -p "./deb/$1"
-    echo "sudo pbuilder build --buildresult ./deb/$1 $debrepo --distribution $1 ../""$2""_$VERSION.dsc "
+    echo "sudo -E pbuilder build --buildresult ./deb/$1 $debrepo --distribution $1 ../""$2""_$VERSION.dsc "
     sudo -E pbuilder build --basetgz "/var/cache/pbuilder/$1.tgz" --buildresult "./deb/$1" $debrepo --distribution $1 "../""$2""_$3.dsc"
     sudo chown -R $(whoami):$(whoami) deb
 }
